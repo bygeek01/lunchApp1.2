@@ -13,9 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let navigationBarController = UINavigationController(rootViewController: CategoryViewController())
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.rootViewController = navigationBarController
+        self.window?.backgroundColor = UIColor.grayColor()
+        self.window?.makeKeyAndVisible()
+        DataConnection().connection()
         return true
     }
 
